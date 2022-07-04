@@ -15,7 +15,7 @@ cmi_password = sys.argv[3]
 cmi_id = sys.argv[4]
 pushgateway_host = sys.argv[5]
 
-metric_prefix = 'test_2_cmi'
+metric_prefix = 'test_1_cmi'
 metric_mapping_config = {
     "Logging Analog": {
         "1": {
@@ -222,6 +222,6 @@ g.labels(instance='cmi', name='test_metric2').set(3.9)
 # g.labels('name', 'test_metric')
 #g.set_to_current_time()
 
-job_name = 'test_2_cmi_extractor'
+job_name = 'test_1_cmi_extractor'
 
 push_to_gateway(pushgateway_host, job=job_name, registry=registry)
