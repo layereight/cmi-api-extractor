@@ -1,6 +1,6 @@
 # cmi-api-extractor
 
-Extract data from TA's  
+Extract data from TA's
 [Control and Monitoring Interface (C.M.I)](https://www.ta.co.at/x2-bedienung-schnittstellen/cmi/).
 The C.M.I. connects to a TA solar and heating control unit like the [UVR16x2](https://www.ta.co.at/x2-frei-programmierbare-regler/uvr16x2/)
 and logs certain data values from the control unit's various inputs, outputs and buses.
