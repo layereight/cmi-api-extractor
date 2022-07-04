@@ -13,7 +13,7 @@ cmi_host = sys.argv[1]
 cmi_username = sys.argv[2]
 cmi_password = sys.argv[3]
 cmi_id = sys.argv[4]
-pushgateway_host = sys.argv[5] + ':9091'
+pushgateway_host = sys.argv[5]
 
 metric_prefix = 'test_2_cmi'
 metric_mapping_config = {
