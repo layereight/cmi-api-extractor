@@ -32,6 +32,8 @@ $ ./cmi-api-extractor.py <cmi_hostname> <cmi_username> <cmi_password> <cmi_id> <
   `curl -i -X DELETE http://<host>:9091/metrics/job/<job_name>`
 * delete metric from prometheus
   `curl -X POST "http://<host>:9090/api/v1/admin/tsdb/delete_series?match[]=<metric_name>"`
+* clean prometheus tombstones
+  `curl -XPOST http://homecenter:9090/api/v1/admin/tsdb/clean_tombstones`
 
 ## Other Links
 
