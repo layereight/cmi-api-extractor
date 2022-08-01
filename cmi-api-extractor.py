@@ -214,14 +214,6 @@ registry = CollectorRegistry()
 create_metrics('Logging Analog', cmi_response['Data'], registry)
 create_metrics('Logging Digital', cmi_response['Data'], registry)
 
-# TOOD: remove test_metric
-g = Gauge('test_metric', 'a test metric', registry=registry, labelnames=['instance', 'name'])
-# g.set(4.2)
-g.labels(instance='cmi', name='test_metric').set(4.2)
-g.labels(instance='cmi', name='test_metric2').set(3.9)
-# g.labels('name', 'test_metric')
-#g.set_to_current_time()
-
 job_name = 'test_1_cmi_extractor'
 
 push_to_gateway(pushgateway_host, job=job_name, registry=registry)
