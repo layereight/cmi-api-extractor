@@ -4,9 +4,9 @@ import sys
 import requests
 from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 
-if len(sys.argv) != 6:
+if len(sys.argv) != 7:
     print('Arguments not matching! Usage:')
-    print(sys.argv[0] + ' <cmi_host> <cmi_username> <cmi_password> <cmi_id> <pushgateway_host>')
+    print(sys.argv[0] + ' <cmi_host> <cmi_username> <cmi_password> <cmi_id> <pushgateway_host> <job_name>')
     sys.exit(1)
 
 cmi_host = sys.argv[1]
@@ -14,8 +14,9 @@ cmi_username = sys.argv[2]
 cmi_password = sys.argv[3]
 cmi_id = sys.argv[4]
 pushgateway_host = sys.argv[5]
+job_name = sys.argv[6]
 
-metric_prefix = 'test_1_cmi'
+metric_prefix = 'cmi'
 metric_mapping_config = {
     "Logging Analog": {
         "1": {
@@ -213,7 +214,5 @@ registry = CollectorRegistry()
 
 create_metrics('Logging Analog', cmi_response['Data'], registry)
 create_metrics('Logging Digital', cmi_response['Data'], registry)
-
-job_name = 'test_1_cmi_extractor'
 
 push_to_gateway(pushgateway_host, job=job_name, registry=registry)

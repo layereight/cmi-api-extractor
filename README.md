@@ -23,7 +23,7 @@ A cron job can be used to periodically retrieve and update values.
 ## Usage
 
 ```shell
-$ ./cmi-api-extractor.py <cmi_hostname> <cmi_username> <cmi_password> <cmi_id> <pushgateway_host>
+$ ./cmi-api-extractor.py <cmi_host> <cmi_username> <cmi_password> <cmi_id> <pushgateway_host> <job_name>
 ```
 
 ## Helpful Commands
