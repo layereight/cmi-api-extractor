@@ -191,7 +191,7 @@ def create_metrics(section: str, cmi_response_data, collector_registry: Collecto
         # print(labels)
 
         metric_name = mapping_config['metric']
-        print(metric_name)
+        # print(metric_name)
 
         if metric_name in existing_metrics:
             g = existing_metrics[metric_name]
